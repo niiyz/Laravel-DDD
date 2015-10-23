@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Keihi\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
