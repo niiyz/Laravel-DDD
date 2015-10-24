@@ -33,6 +33,13 @@
     <input type="submit" class="ui primary button" value="@if (isset($keihi->id))更新 @else 作成 @endif">
     <a class="ui button" href="/keihi">キャンセル</a>
     </form>
+    @if (isset($keihi->id))
+    <form class="ui form" method="POST" action="{{{ route('keihi.destroy', ['id' => $keihi->id]) }}}">
+     <input name="_method" type="hidden" value="DELETE">
+     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+     <input type="submit" class="ui negative button" value="削除">
+    </form>
+    @endif
     </div>
 </div>
 </body>
