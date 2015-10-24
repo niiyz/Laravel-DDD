@@ -3,6 +3,8 @@
 namespace Keihi\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Keihi\Services\KeihiServiceInterface;
+use Keihi\Services\KeihiService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // 経費サービス
+        $this->app->singleton(KeihiServiceInterface::class, KeihiService::class);
     }
 }
