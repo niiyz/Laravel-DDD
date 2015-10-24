@@ -54,6 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
+            'unix_socket' => env('DB_UNIX_SOCKET'),
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'forge'),
             'username'  => env('DB_USERNAME', 'forge'),
