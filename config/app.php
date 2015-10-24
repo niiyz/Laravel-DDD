@@ -144,7 +144,7 @@ return [
         Keihi\Providers\AuthServiceProvider::class,
         Keihi\Providers\EventServiceProvider::class,
         Keihi\Providers\RouteServiceProvider::class,
-
+        Keihi\Providers\RepositoryProvider::class,
     ],
 
     /*
