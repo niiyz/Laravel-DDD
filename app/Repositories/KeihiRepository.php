@@ -51,7 +51,10 @@ class KeihiRepository implements KeihiInterface
      */
     public function update($id, $data)
     {
-        return $this->keihi->find($id)->update($data);
+        if ($this->keihi->find($id)->update($data)) {
+            return $id;
+        }
+        return null;
     }
 
     /**
@@ -61,7 +64,11 @@ class KeihiRepository implements KeihiInterface
      */
     public function create($data)
     {
-        return $this->keihi->create($data)->id;
+        $model = $this->keihi->create($data);
+        if (isset($model->id)) {
+            return $model->id;
+        }
+        return null;
     }
 
     /**
